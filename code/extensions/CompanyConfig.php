@@ -1,6 +1,6 @@
 <?php
 
-class CompanyConfig extends DataExtension {
+class CompanyConfig extends DataObjectDecorator {
 
 	static $db = array(
     	'CompanyName' => 'Varchar(200)',
@@ -13,16 +13,16 @@ class CompanyConfig extends DataExtension {
 	public function updateCMSFields(FieldList $fields) {
 		
 		$fields->addFieldsToTab('Root.Address', array(
-			HeaderField::create('CompanyInfo', 'Company Information'),
-			LiteralField::create('EnterInfo', 
+			new HeaderField('CompanyInfo', 'Company Information'),
+			new LiteralField('EnterInfo', 
 				'<p>Enter your company contact information, which will be used throughout your website</p>'),
-			TextField::create('CompanyName', 'Company Name'),
-			TextField::create('PhoneNumber', 'Phone Number'),
-			TextField::create('EmailAddress', 'Email Address'),
-			TextareaField::create('Hours')
+			new TextField('CompanyName', 'Company Name'),
+			new TextField('PhoneNumber', 'Phone Number'),
+			new TextField('EmailAddress', 'Email Address'),
+			new TextareaField('Hours')
 		));
 		
-		$fields->insertAfter(CheckboxField::create('ShowDirections', 'Show Map and Driving Directions'), 'Country');
+		$fields->insertAfter(new CheckboxField('ShowDirections', 'Show Map and Driving Directions'), 'Country');
 		
 	}
 

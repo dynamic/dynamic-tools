@@ -1,5 +1,5 @@
 <?php
-class HeaderConfig extends DataExtension {
+class HeaderConfig extends DataObjectDecorator {
 
 	static $db = array(
 		'TitleLogo' => 'enum("Logo, Title")'
@@ -15,7 +15,7 @@ class HeaderConfig extends DataExtension {
 	
     public function updateCMSFields(FieldList $fields) {
     
-		$ImageField = UploadField::create('Logo');
+		$ImageField = new FileUploadField('Logo');
 		$ImageField->getValidator()->allowedExtensions = array('jpg', 'gif', 'png');
 		$ImageField->setFolderName('Uploads/Logo');
 		$ImageField->setConfig('allowedMaxFileNumber', 1);
@@ -24,10 +24,10 @@ class HeaderConfig extends DataExtension {
 		$logoOptions = array('Title' => 'Display Site Title and Slogan', 'Logo' => 'Display Logo');
 		
 		$fields->addFieldsToTab('Root.Template', array(
-			HeaderField::create('TemplateHeader', 'Template'),
-			LiteralField::create('EditHeader', '<p>Edit the Template of your website</p>'),
-			HeaderField::create('Header', 'Header Settings', 3),
-			OptionsetField::create('TitleLogo', 'Branding', $logoOptions),
+			new HeaderField('TemplateHeader', 'Template'),
+			new LiteralField('EditHeader', '<p>Edit the Template of your website</p>'),
+			new HeaderField('Header', 'Header Settings', 3),
+			new OptionsetField('TitleLogo', 'Branding', $logoOptions),
 			$ImageField//,
    			//HeaderField::create('DisplayOptions', 'Display Options'),
    			

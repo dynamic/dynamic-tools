@@ -39,7 +39,7 @@ class LinkObject extends DataObject {
 	}
 	
 	public function getCMSFields() {
-		$fields = FieldList::create(
+		$fields = new FieldSet(
 			$tabSet = new TabSet('Root',
 				$mainTab = new Tab('Main',
 					new TextField('Name'),
