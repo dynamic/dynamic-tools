@@ -1,5 +1,21 @@
 {
     "name": "dynamic/dynamic-tools",
     "description": "The Dynamic Tools Module",
-    "type": "silverstripe-module"
+    "type": "silverstripe-module",
+    "keywords": ["silverstripe", "dynamic", "tools"],
+    "license": "BSD-3-Clause",
+    "require": {
+    	"silverstripe/framework": ">=3.0",
+	    "ajshort/silverstripe-addressable": "1.0.0"
+    },
+   
+    "authors": [
+        {
+            "name": "Dynamic Inc",
+            "homepage": "http://dynamicdoes.com"
+        }
+    ],
+	"extra": {
+		"installer-name": "dynamic-tools"
+	}
 }
