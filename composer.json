@@ -1,0 +1,5 @@
+{
+    "name": "dynamic/dynamic-tools",
+    "description": "The Dynamic Tools Module",
+    "type": "silverstripe-module"
+}
