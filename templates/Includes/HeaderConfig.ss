@@ -1,4 +1,4 @@
-<% control SiteConfig %>
+<% with SiteConfig %>
 	<% if TitleLogo = Logo %>
 		<% if Logo %>
 			<h1 class="remove-bottom">
@@ -12,4 +12,4 @@
 		<% if Tagline %><h5>$Tagline</h5><% end_if %>
 		
 	<% end_if %>
-<% end_control %>
+<% end_with %>
