@@ -5,8 +5,8 @@
     "keywords": ["silverstripe", "dynamic", "tools"],
     "license": "BSD-3-Clause",
     "require": {
-    	"silverstripe/framework": ">=3.0",
-	    "ajshort/silverstripe-addressable": "1.0.0"
+        "silverstripe/framework": ">=3.0",
+        "silverstripe-australia/silverstripe-addressable": "1.0.0"
     },
    
     "authors": [
@@ -15,7 +15,7 @@
             "homepage": "http://dynamicdoes.com"
         }
     ],
-	"extra": {
-		"installer-name": "dynamic-tools"
-	}
+    "extra": {
+        "installer-name": "dynamic-tools"
+    }
 }
