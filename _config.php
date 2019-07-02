@@ -1,8 +1,8 @@
 <?php
 
 // add Addressable
-Object::add_extension('SiteConfig', 'Addressable');
-Object::add_extension('SiteConfig', 'Geocodable');
+SiteConfig::add_extension('Addressable');
+SiteConfig::add_extension('Geocodable');
 
-Object::add_extension('SiteConfig', 'CompanyConfig');
-Object::add_extension('SiteConfig', 'HeaderConfig');
+SiteConfig::add_extension('CompanyConfig');
+SiteConfig::add_extension('HeaderConfig');
